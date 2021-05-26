@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
-const orderHistoryShemas = mongoose.Schema({
+const orderHistoryShema = mongoose.Schema({
   
     userInfo : {
         type : mongoose.Types.ObjectId,
-        ref : "user",
-        required : true
+        ref : "User",
+       
     },
 
     orderInfo : {
@@ -13,9 +13,21 @@ const orderHistoryShemas = mongoose.Schema({
         type : Object,
         required : true
         
+    },
+    status : {
+        type : String,
+        enum : ["delivered","pending"]
+    },
+
+    date : {
+
+        type : String,
+
+        default: Date.now
+
     }
 
   
 });
 
-module.exports = userSchema;
+module.exports = orderHistoryShema;

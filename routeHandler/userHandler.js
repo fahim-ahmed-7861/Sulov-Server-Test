@@ -79,7 +79,7 @@ router.get("/login/:id", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const alluser = await User.find({});
+    const alluser = await User.find({}).populate('orderHistory');
 
     return res.status(200).json({
       data: alluser,

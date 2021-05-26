@@ -33,7 +33,7 @@ const userSchema = mongoose.Schema({
   orderHistory: [
     {
       type: mongoose.Types.ObjectId,
-      ref: "orderHistory"
+      ref: "OrderHistory"
     }
   ]
 });

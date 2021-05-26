@@ -86,13 +86,17 @@ router.get("/", async (req, res) => {
 
     console.log(allProduct.length);
 
+    const  reverseProduct = allProduct.reverse();
+
+    const newlyAddedProduct = reverseProduct.slice(0,6);
+
+    
+
     const randomSuffle = shuffle(allProduct);
 
     const randomProduct = randomSuffle.slice(0,15);
 
-    const  reverseProduct = allProduct.reverse();
-
-    const newlyAddedProduct = reverseProduct.slice(0,6);
+   
 
 
 

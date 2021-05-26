@@ -42,6 +42,8 @@ app.use('/category',route.category);
 
 app.use('/user',route.user);
 
+app.use('/order',route.orderHistory);
+
 
 
 app.get('/',(req,res)=>
