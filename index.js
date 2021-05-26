@@ -8,12 +8,14 @@ const fileUpload = require('express-fileupload');
 
 const route = require('./route');
 
-const password = "iKwGWMdRwIxz2KhU"
+
 
 var cors = require('cors');
 const dotenv = require('dotenv')
+dotenv.config();
 
-const url = `mongodb+srv://sulovEcommerceAdmin:${password}@cluster0.ch6qp.mongodb.net/SulovDb?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.ch6qp.mongodb.net/SulovDb?retryWrites=true&w=majority`;
+
 
 mongoose.connect(url,{ useUnifiedTopology: true, useNewUrlParser: true})
 .then(()=>console.log('connection succesfull'))
@@ -21,7 +23,7 @@ mongoose.connect(url,{ useUnifiedTopology: true, useNewUrlParser: true})
 
 const app = express();
 
-dotenv.config();
+
 
 app.use(bodyParser.json());
 app.use(cors()) 

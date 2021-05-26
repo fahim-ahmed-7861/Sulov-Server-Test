@@ -15,7 +15,7 @@ const bcrypt = require("bcrypt");
 router.post("/signup", async (req, res) => {
   // console.log(req.body);
 
-  console.log(process.env.JWT_SECRET);
+  
 
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
