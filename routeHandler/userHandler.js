@@ -37,11 +37,8 @@ router.post("/signup", async (req, res) => {
       },
       process.env.JWT_SECRET
     );
-    console.log('ok50');
 
     const user = await newUser.save();
-
-    console.log('ok30')
 
     console.log(newUser.token);
 
